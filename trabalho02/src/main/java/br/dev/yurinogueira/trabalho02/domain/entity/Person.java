@@ -56,7 +56,7 @@ public class Person {
         return "\nID = " + getId() +
                "\nNome = " + getName() +
                "\nCPF = " + getCpfMask() +
-               "\n Versão = " + getVersion();
+               "\nVersão = " + getVersion();
     }
 
 }
