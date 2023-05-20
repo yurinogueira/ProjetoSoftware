@@ -1,10 +1,9 @@
 package br.dev.yurinogueira.trabalho02;
 
-import br.dev.yurinogueira.trabalho02.domain.dao.PersonDao;
+import br.dev.yurinogueira.trabalho02.domain.service.PersonService;
+import br.dev.yurinogueira.trabalho02.domain.service.impl.PersonServiceImpl;
 import br.dev.yurinogueira.trabalho02.domain.entity.Person;
-import br.dev.yurinogueira.trabalho02.exception.ObsoleteEntityException;
 import br.dev.yurinogueira.trabalho02.exception.PersonException;
-import br.dev.yurinogueira.trabalho02.factory.DaoFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,12 +14,12 @@ public class Main {
 
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-    private static Person getPerson(Scanner scanner, PersonDao personDao) {
+    private static Person getPerson(Scanner scanner, PersonService personService) {
         Long personId = scanner.nextLong();
         Person person = null;
 
         try {
-            person = personDao.read(personId);
+            person = personService.read(personId);
         }
         catch (PersonException e) {
             System.out.println("\n" + e.getMessage());
@@ -29,7 +28,7 @@ public class Main {
         return person;
     }
 
-    private static void createPerson(Scanner scanner, PersonDao personDao) {
+    private static void createPerson(Scanner scanner, PersonService personService) {
         StringBuilder personName = new StringBuilder();
         Person person = new Person();
 
@@ -50,16 +49,16 @@ public class Main {
         } while (!person.isValidCpf());
 
         try {
-            Long personID = personDao.create(person);
-            System.out.println("Pessoa criada com sucesso! ID: " + personID);
+            person = personService.create(person);
+            System.out.println("Pessoa criada com sucesso! ID: " + person.getId());
         } catch (PersonException e) {
             System.out.println("\n" + e.getMessage());
         }
     }
 
-    private static void updatePerson(Scanner scanner, PersonDao personDao) {
+    private static void updatePerson(Scanner scanner, PersonService personService) {
         System.out.print("Informe o ID da pessoa que você deseja alterar: ");
-        Person person = getPerson(scanner, personDao);
+        Person person = getPerson(scanner, personService);
         if (person == null) {
             return;
         }
@@ -81,13 +80,8 @@ public class Main {
 
                 person.setName(personName.toString());
                 try {
-                    personDao.update(person);
+                    person = personService.update(person);
                     System.out.println("Nome alterado com sucesso! ID: " + person.getId());
-                }
-                catch (ObsoleteEntityException e) {
-                    System.out.println(
-                        "Operação não efetuada, os dados que você tentou salvar foram modificados por outro usuário!"
-                    );
                 }
                 catch (PersonException e) {
                     System.out.println("\n" + e.getMessage());
@@ -100,13 +94,8 @@ public class Main {
 
                 person.setCpf(cpf);
                 try {
-                    personDao.update(person);
+                    person = personService.update(person);
                     System.out.println("CPF alterado com sucesso! ID: " + person.getId());
-                }
-                catch (ObsoleteEntityException e) {
-                    System.out.println(
-                        "Operação não efetuada, os dados que você tentou salvar foram modificados por outro usuário!"
-                    );
                 }
                 catch (PersonException e) {
                     System.out.println("\n" + e.getMessage());
@@ -116,9 +105,9 @@ public class Main {
         }
     }
 
-    private static void deletePerson(Scanner scanner, PersonDao personDao) {
+    private static void deletePerson(Scanner scanner, PersonService personService) {
         System.out.print("Informe o ID da pessoa que você deseja apagar: ");
-        Person person = getPerson(scanner, personDao);
+        Person person = getPerson(scanner, personService);
         if (person == null) {
             return;
         }
@@ -130,7 +119,7 @@ public class Main {
 
         if (resp.toLowerCase().startsWith("s")) {
             try {
-                personDao.delete(person);
+                personService.delete(person);
                 System.out.println("Pessoa deletada com sucesso! ID: " + person.getId());
             } catch (PersonException e) {
                 System.out.println("\n" + e.getMessage());
@@ -138,17 +127,17 @@ public class Main {
         }
     }
 
-    private static void listPerson(PersonDao personDao) {
-        List<Person> personList = personDao.list();
+    private static void listPerson(PersonService personService) {
+        List<Person> personList = personService.list();
 
         for (Person person : personList) {
             System.out.println(person);
         }
     }
 
-    private static void retrievePerson(Scanner scanner, PersonDao personDao) {
+    private static void retrievePerson(Scanner scanner, PersonService personService) {
         System.out.print("Informe o ID da pessoa que você acessar: ");
-        Person person = getPerson(scanner, personDao);
+        Person person = getPerson(scanner, personService);
         if (person == null) {
             return;
         }
@@ -160,10 +149,7 @@ public class Main {
         logger.info("Mensagem de log emitida utilizando o LOG4J");
 
         Scanner scanner = new Scanner(System.in);
-        PersonDao personDao = DaoFactory.getDao(PersonDao.class);
-        if (personDao == null) {
-            return;
-        }
+        PersonService personService = new PersonServiceImpl();
 
         boolean running = true;
         while (running) {
@@ -178,11 +164,11 @@ public class Main {
             int option = scanner.nextInt();
 
             switch (option) {
-                case 1 -> createPerson(scanner, personDao);
-                case 2 -> updatePerson(scanner, personDao);
-                case 3 -> deletePerson(scanner, personDao);
-                case 4 -> listPerson(personDao);
-                case 5 -> retrievePerson(scanner, personDao);
+                case 1 -> createPerson(scanner, personService);
+                case 2 -> updatePerson(scanner, personService);
+                case 3 -> deletePerson(scanner, personService);
+                case 4 -> listPerson(personService);
+                case 5 -> retrievePerson(scanner, personService);
                 case 6 -> running = false;
                 default -> System.out.println("Comando inválido!");
             }
