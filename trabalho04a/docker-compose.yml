@@ -3,16 +3,16 @@ version: "3.8"
 services:
   mysql:
     image: mysql:8.0.33
-    container_name: trabalho02-mysql
+    container_name: trabalho04a-mysql
     network_mode: "host"
     restart: no
     volumes:
-      - trabalho02-mysql:/var/lib/mysql
+      - trabalho04a-mysql:/var/lib/mysql
     environment:
-      - MYSQL_DATABASE=trabalho02
+      - MYSQL_DATABASE=trabalho04a
       - MYSQL_USER=yuri
       - MYSQL_PASSWORD=nogueira
       - MYSQL_ROOT_PASSWORD=nogueira
 
 volumes:
-  trabalho02-mysql:
+  trabalho04a-mysql:
