@@ -107,7 +107,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>br.dev.yurinogueira.trabalho03.Main</mainClass>
+                            <mainClass>br.dev.yurinogueira.trabalho04a.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
