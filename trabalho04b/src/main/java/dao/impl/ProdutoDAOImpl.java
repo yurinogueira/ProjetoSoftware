@@ -3,7 +3,7 @@ package dao.impl;
 import java.util.List;
 
 
-import anotacao.PersistenceContext;
+import anotacao.Autowired;
 import dao.ProdutoDAO;
 import excecao.InfraestruturaException;
 import excecao.ObjetoNaoEncontradoException;
@@ -13,8 +13,11 @@ import modelo.Produto;
 
 public class ProdutoDAOImpl implements ProdutoDAO {
 
-	@PersistenceContext
+	@Autowired
 	protected EntityManager em;
+
+	public ProdutoDAOImpl() {
+	}
 
 	public long inclui(Produto umProduto) {
 		try {

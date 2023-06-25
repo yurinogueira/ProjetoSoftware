@@ -1,9 +1,8 @@
 package dao.controle;
 
-import anotacao.PersistenceContext;
-import em.ProxyEntityManager;
+import anotacao.Autowired;
 import em.controller.FabricaDeEntityManager;
-import net.sf.cglib.proxy.Enhancer;
+import jakarta.persistence.EntityManager;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Field;
@@ -21,14 +20,15 @@ public class FabricaDeDAOs {
 		}
 
 		Class<?> classe = classes.iterator().next();
-		T instance = tipo.cast(Enhancer.create(classe, new InterceptadorDeDao()));
 
 		try {
+			T instance = tipo.cast(classe.getDeclaredConstructor().newInstance());
+
 			Field[] campos = instance.getClass().getDeclaredFields();
 			for (Field campo : campos) {
-				if (campo.isAnnotationPresent(PersistenceContext.class)) {
+				if (campo.isAnnotationPresent(Autowired.class)) {
 					campo.setAccessible(true);
-					campo.set(instance, FabricaDeEntityManager.getEntityManager(ProxyEntityManager.class));
+					campo.set(instance, FabricaDeEntityManager.getEntityManager());
 				}
 			}
 

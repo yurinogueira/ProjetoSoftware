@@ -1,10 +1,13 @@
 package em.controller;
 
+import anotacao.PersistenceContext;
+import em.impl.ProxyEntityManagerImpl;
 import jakarta.persistence.EntityManager;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 import util.JPAUtil;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class InterceptadorDeEntityManager implements MethodInterceptor {
@@ -33,7 +36,18 @@ public class InterceptadorDeEntityManager implements MethodInterceptor {
     public Object intercept(Object objeto, Method metodo, Object[] args, MethodProxy metodoOriginal) throws Throwable {
         try {
             EntityManager entityManager = JPAUtil.getEntityManager();
-            return metodo.invoke(entityManager, args);
+            Field[] campos = ProxyEntityManagerImpl.class.getDeclaredFields();
+            for (Field campo : campos) {
+                if (campo.isAnnotationPresent(PersistenceContext.class)) {
+                    campo.setAccessible(true);
+                    try {
+                        campo.set(objeto, entityManager);
+                    } catch (IllegalArgumentException | IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+            return metodoOriginal.invokeSuper(objeto, args);
         }
         catch (Exception e) {
             throw new RuntimeException(e);
