@@ -4,41 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fddd236a-5ba5-4ad9-a8c5-0dacae439b75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/beans-jpa.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trabalho05.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/anotacao/Autowired.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/anotacao/Executar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/anotacao/PersistenceContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/anotacao/Transactional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/anotacao/RecuperaObjeto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PersonDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PersonDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/controle/FabricaDeDAOs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/controle/FabricaDeDAOs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/controle/InterceptadorDeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/controle/InterceptadorDeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/JPADaoGeneric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/JPADaoGenerico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/PersonDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/PersonDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/em/controller/FabricaDeEntityManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/em/controller/InterceptadorDeEntityManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/excecao/InfraestruturaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/excecao/InfraestruturaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/excecao/ObjetoNaoEncontradoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/excecao/ObjetoNaoEncontradoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/excecao/PersonNaoEncontradoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/excecao/PersonNaoEncontradoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servico/PersonAppService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servico/PersonAppService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servico/controle/FabricaDeServico.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servico/controle/InterceptadorDeServico.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servico/impl/PersonAppServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servico/impl/PersonAppServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+    <list default="true" id="fddd236a-5ba5-4ad9-a8c5-0dacae439b75" name="Changes" comment="chore: unnecessary classes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,11 +76,31 @@
       <updated>1688849884338</updated>
       <workItem from="1688849885556" duration="288000" />
       <workItem from="1688850188859" duration="145000" />
-      <workItem from="1688850336196" duration="1364000" />
+      <workItem from="1688850336196" duration="2059000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: finish trabalho 05">
+      <created>1688851751873</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688851751873</updated>
+    </task>
+    <task id="LOCAL-00002" summary="chore: unnecessary classes">
+      <created>1688851826206</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688851826206</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: finish trabalho 05" />
+    <MESSAGE value="chore: unnecessary classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: unnecessary classes" />
   </component>
 </project>

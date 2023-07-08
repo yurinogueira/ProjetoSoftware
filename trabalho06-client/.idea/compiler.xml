@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="sb00-cliente-resumido-com-builder-log4j2" />
+        <module name="sb00-cliente-resumido" />
+        <module name="sb01-cliente" />
+        <module name="sb01-com-cliente" />
+        <module name="sb00-cliente-resumido-com-builder" />
+        <module name="App-Cliente-Incompleto" />
+        <module name="sb02-com-cliente-error-handler" />
+        <module name="sb99-cliente" />
+        <module name="trabalho06-client" />
+        <module name="sb88-cliente" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sb01" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="App-Cliente-Incompleto" options="-parameters" />
+      <module name="sb00-cliente-resumido" options="-parameters" />
+      <module name="sb00-cliente-resumido-com-builder" options="-parameters" />
+      <module name="sb00-cliente-resumido-com-builder-log4j2" options="-parameters" />
+      <module name="sb00-cliente-resumido-com-builder-log4j2-categoria" options="-parameters" />
+      <module name="sb01-cliente" options="-parameters" />
+      <module name="sb01-com-cliente" options="-parameters" />
+      <module name="sb02-com-cliente-error-handler" options="-parameters" />
+      <module name="sb88-cliente" options="-parameters" />
+      <module name="sb99-cliente" options="-parameters" />
+      <module name="trabalho06-client" options="-parameters" />
+    </option>
+  </component>
+</project>
