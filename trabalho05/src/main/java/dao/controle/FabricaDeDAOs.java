@@ -1,24 +1,20 @@
 package dao.controle;
 
+import dao.impl.PersonDaoImpl;
 import net.sf.cglib.proxy.Enhancer;
-import org.reflections.Reflections;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-import java.util.Set;
-
+@Configuration
 public class FabricaDeDAOs {
 
-	public static <T> T getDAO(Class<T> tipo) {
-		Reflections reflections = new Reflections("dao.impl");
+	@Bean
+	public static PersonDaoImpl getPersonDao() {
+		return getDao(dao.impl.PersonDaoImpl.class);
+	}
 
-		Set<Class<? extends T>> classes = reflections.getSubTypesOf(tipo);
-
-		if (classes.size() > 1) {
-			throw new RuntimeException("Somente uma classe pode implementar " + tipo.getName());
-		}
-
-		Class<?> classe = classes.iterator().next();
-
-		return tipo.cast(Enhancer.create(classe, new InterceptadorDeDao()));
+	public static <T> T getDao(Class<T> classeDoDao) {
+		return classeDoDao.cast(Enhancer.create(classeDoDao, new InterceptadorDeDao()));
 	}
 
 }

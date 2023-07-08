@@ -21,6 +21,10 @@ public class Role {
     @Column(name = "id")
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id")
+    private Person person;
+
     @Column(name = "name", unique = true)
     private String name;
 

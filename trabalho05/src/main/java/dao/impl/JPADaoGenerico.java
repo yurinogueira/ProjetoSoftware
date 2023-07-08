@@ -1,29 +1,26 @@
 package dao.impl;
 
-import anotacao.Executar;
 import dao.DaoGenerico;
 import excecao.InfraestruturaException;
 import excecao.ObjetoNaoEncontradoException;
 import jakarta.persistence.*;
 
 import java.lang.reflect.Method;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
-public class JPADaoGeneric<T, Pk> implements DaoGenerico<T, Pk> {
+public class JPADaoGenerico<T, Pk> implements DaoGenerico<T, Pk> {
 
-    public EntityManager em;
+    @PersistenceContext
+    protected EntityManager em;
 
     private final Class<T> tipo;
 
-    public JPADaoGeneric(Class<T> tipo) {
+    public JPADaoGenerico(Class<T> tipo) {
         this.tipo = tipo;
     }
 
-    @Executar
     @Override
-    public T inclui(T obj) {
+    public final T inclui(T obj) {
         try {
             em.persist(obj);
         }
@@ -34,9 +31,8 @@ public class JPADaoGeneric<T, Pk> implements DaoGenerico<T, Pk> {
         return obj;
     }
 
-    @Executar
     @Override
-    public void altera(T obj) {
+    public final void altera(T obj) {
         try {
             em.merge(obj);
         }
@@ -45,20 +41,24 @@ public class JPADaoGeneric<T, Pk> implements DaoGenerico<T, Pk> {
         }
     }
 
-    @Executar
     @Override
-    public void exclui(T obj) {
+    public final void exclui(T obj) {
         try {
-            em.remove(obj);
+            if (em.contains(obj)) {
+                em.remove(obj);
+            }
+            else {
+                obj = em.merge(obj);
+                em.remove(obj);
+            }
         }
         catch (RuntimeException e) {
             throw new InfraestruturaException(e);
         }
     }
 
-    @Executar
     @Override
-    public T getPorId(Pk id) throws ObjetoNaoEncontradoException {
+    public final T getPorId(Pk id) throws ObjetoNaoEncontradoException {
         T objeto;
 
         try {
@@ -74,9 +74,8 @@ public class JPADaoGeneric<T, Pk> implements DaoGenerico<T, Pk> {
         return objeto;
     }
 
-    @Executar
     @Override
-    public T getPorIdComLock(Pk id) throws ObjetoNaoEncontradoException {
+    public final T getPorIdComLock(Pk id) throws ObjetoNaoEncontradoException {
         T objeto;
 
         try {
@@ -92,7 +91,21 @@ public class JPADaoGeneric<T, Pk> implements DaoGenerico<T, Pk> {
         return objeto;
     }
 
+    public final T busca(Method metodo, Object[] argumentos) throws ObjetoNaoEncontradoException {
+        try {
+            return getQuery(metodo, argumentos).getSingleResult();
+        } catch (NoResultException e) {
+            throw new ObjetoNaoEncontradoException();
+        } catch (RuntimeException e) {
+            throw new InfraestruturaException(e);
+        }
+    }
+
     public final List<T> buscaLista(Method metodo, Object[] argumentos) {
+        return getQuery(metodo, argumentos).getResultList();
+    }
+
+    private TypedQuery<T> getQuery(Method metodo, Object[] argumentos) throws InfraestruturaException {
         try {
             String nomeDaBusca = tipo.getSimpleName() + "." + metodo.getName();
             TypedQuery<T> namedQuery = em.createNamedQuery(nomeDaBusca, tipo);
@@ -103,10 +116,24 @@ public class JPADaoGeneric<T, Pk> implements DaoGenerico<T, Pk> {
                     namedQuery.setParameter(i + 1, arg);
                 }
             }
-            return namedQuery.getResultList();
+            return namedQuery;
         } catch (RuntimeException e) {
             throw new InfraestruturaException(e);
         }
     }
 
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        JPADaoGenerico<?, ?> that = (JPADaoGenerico<?, ?>) o;
+
+        return tipo.equals(that.tipo);
+    }
+
+    @Override
+    public final int hashCode() {
+        return tipo.hashCode();
+    }
 }

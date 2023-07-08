@@ -15,6 +15,8 @@ public interface PersonAppService {
 
 	Person recuperaUmPerson(Long id) throws PersonNaoEncontradoException;
 
+	Person recuperaUmPersonERoles(Long id) throws PersonNaoEncontradoException;
+
 	List<Person> recuperaPersons();
 
 }

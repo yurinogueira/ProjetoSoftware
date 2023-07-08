@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
+import java.util.List;
 
 @Entity
 @Table(name = "person")
@@ -17,7 +18,8 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicInsert
 @DynamicUpdate
 @NamedQueries({
-        @NamedQuery(name = "Person.recuperaListaDePersons", query = "select p from Person p order by p.id"),
+        @NamedQuery(name = "Person.recuperaListaDePersons", query = "SELECT p FROM Person p ORDER BY p.id"),
+        @NamedQuery(name = "Person.recuperaUmaPessoaERoles", query = "SELECT p FROM Person p LEFT OUTER JOIN FETCH p.roles WHERE p.id = ?1"),
 })
 public class Person {
 
@@ -33,6 +35,10 @@ public class Person {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "person")
+    @OrderBy
+    private List<Role> roles;
 
     @Version
     private Integer version;

@@ -1,13 +1,12 @@
 package dao.controle;
 
-import anotacao.Executar;
 import anotacao.RecuperaLista;
-import dao.impl.JPADaoGeneric;
+import anotacao.RecuperaObjeto;
+import dao.impl.JPADaoGenerico;
+import excecao.InfraestruturaException;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
-import util.JPAUtil;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class InterceptadorDeDao implements MethodInterceptor {
@@ -34,17 +33,16 @@ public class InterceptadorDeDao implements MethodInterceptor {
      */
 
     public Object intercept(Object objeto, Method metodo, Object[] args, MethodProxy metodoProxy) throws Throwable {
-        System.out.println("Método interceptador do DAO: " + metodo.getName() + " da classe " + metodo.getDeclaringClass().getName());
+        JPADaoGenerico<?, ?> daoGenerico = (JPADaoGenerico<?, ?>) objeto;
 
-        JPADaoGeneric<?, ?> daoGenerico = (JPADaoGeneric<?, ?>) objeto;
-        daoGenerico.em = JPAUtil.getEntityManager();
-
-        if (metodo.isAnnotationPresent(Executar.class)) {
-            return metodoProxy.invokeSuper(objeto, args);
-        } else if (metodo.isAnnotationPresent(RecuperaLista.class)) {
+        if (metodo.isAnnotationPresent(RecuperaLista.class)) {
             return daoGenerico.buscaLista(metodo, args);
-        } else {
-            throw new RuntimeException("Método não anotado com @Executar ou @RecuperaLista");
+        } else if (metodo.isAnnotationPresent(RecuperaObjeto.class)) {
+            return daoGenerico.busca(metodo, args);
+        }  else {
+            throw new InfraestruturaException(
+                    "O método " + metodo.getName() + " da classe " + metodo.getDeclaringClass() + " não foi anotado"
+            );
         }
     }
 }
