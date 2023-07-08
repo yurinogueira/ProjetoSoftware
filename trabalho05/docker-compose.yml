@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0.33
+    container_name: trabalho05-mysql
+    network_mode: "host"
+    restart: no
+    volumes:
+      - trabalho05-mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=trabalho05
+      - MYSQL_USER=yuri
+      - MYSQL_PASSWORD=nogueira
+      - MYSQL_ROOT_PASSWORD=nogueira
+
+volumes:
+  trabalho05-mysql:

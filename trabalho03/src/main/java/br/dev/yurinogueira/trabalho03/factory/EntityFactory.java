@@ -116,7 +116,7 @@ public class EntityFactory {
     public static void closeEntityManager() {
         EntityTransaction transaction = threadTransaction.get();
         Integer transactionCount = threadTransactionCount.get();
-        if (transactionCount == null || transactionCount == 0) {
+        if (transactionCount == null) {
             if (transaction != null && transaction.isActive()) {
                 rollbackTransaction();
             }
