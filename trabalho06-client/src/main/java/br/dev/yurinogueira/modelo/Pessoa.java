@@ -34,11 +34,4 @@ public class Pessoa {
         this.funcoes = funcoes;
     }
 
-    @Override
-    public String toString() {
-        return "\nID = " + getId() +
-                "\nNome = " + getNome() +
-                "\nCPF = " + getCpf();
-    }
-
 }

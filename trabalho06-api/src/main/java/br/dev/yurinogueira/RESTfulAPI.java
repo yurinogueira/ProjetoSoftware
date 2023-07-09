@@ -16,7 +16,7 @@ public class RESTfulAPI implements CommandLineRunner {
 	private PessoaRepository pessoaRepository;
 
 	@Autowired
-	private FuncaoRepository categoriaRepository;
+	private FuncaoRepository funcaoRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RESTfulAPI.class, args);
@@ -24,30 +24,30 @@ public class RESTfulAPI implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		funcaoRepository.deleteAll();
 		pessoaRepository.deleteAll();
-		categoriaRepository.deleteAll();
-
-		Funcao engenheiro = new Funcao("Engenheiro", "Constrói coisas", 40);
-		categoriaRepository.save(engenheiro);
-		Funcao pai = new Funcao("Pai", "Cuida dos filhos", 40);
-		categoriaRepository.save(pai);
-		Funcao uber = new Funcao("Uber", "Transporta pessoas", 40);
-		categoriaRepository.save(uber);
-
-		Funcao medico = new Funcao("Médico", "Cuida da saúde", 40);
-		categoriaRepository.save(medico);
-		Funcao mae = new Funcao("Mãe", "Cuida dos filhos", 80);
-		categoriaRepository.save(mae);
 
 		Pessoa pessoa1 = new Pessoa("Jorge", "12312312343");
-		pessoa1.addFuncao(engenheiro);
-		pessoa1.addFuncao(pai);
-		pessoa1.addFuncao(uber);
 		pessoaRepository.save(pessoa1);
 
 		Pessoa pessoa2 = new Pessoa("Maria", "13212312343");
-		pessoa2.addFuncao(medico);
-		pessoa2.addFuncao(mae);
 		pessoaRepository.save(pessoa2);
+
+		Funcao engenheiro = new Funcao("Engenheiro", "Constrói coisas", 40);
+		engenheiro.setPessoa(pessoa1);
+		funcaoRepository.save(engenheiro);
+		Funcao pai = new Funcao("Pai", "Cuida dos filhos", 40);
+		pai.setPessoa(pessoa1);
+		funcaoRepository.save(pai);
+		Funcao uber = new Funcao("Uber", "Transporta pessoas", 40);
+		uber.setPessoa(pessoa1);
+		funcaoRepository.save(uber);
+
+		Funcao medico = new Funcao("Médico", "Cuida da saúde", 40);
+		medico.setPessoa(pessoa2);
+		funcaoRepository.save(medico);
+		Funcao mae = new Funcao("Mãe", "Cuida dos filhos", 80);
+		mae.setPessoa(pessoa2);
+		funcaoRepository.save(mae);
 	}
 }

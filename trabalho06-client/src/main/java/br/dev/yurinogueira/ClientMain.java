@@ -224,7 +224,7 @@ public class ClientMain {
                     id = Console.readInt("\nInforme o ID da função: ");
 
                     ResponseEntity<Pessoa[]> res = restTemplate.exchange(
-                            "http://localhost:8080/funcoes/{id}",
+                            "http://localhost:8080/pessoas/funcao/{idFuncao}",
                             HttpMethod.GET,
                             null,
                             Pessoa[].class,

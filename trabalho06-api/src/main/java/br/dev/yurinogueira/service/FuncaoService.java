@@ -33,7 +33,7 @@ public class FuncaoService {
     }
 
     public List<Funcao> recuperarFuncoes() {
-        return funcaoRepository.findAll(Sort.by("id"));
+        return funcaoRepository.findAll(Sort.by("nome"));
     }
 
     public Funcao recuperarFuncoesPorId(Long id) {

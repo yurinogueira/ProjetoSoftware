@@ -30,11 +30,4 @@ public class Funcao {
         this.hours = hours;
     }
 
-    @Override
-    public String toString() {
-        return "\nID = " + getId() +
-                "\nNome = " + getNome() +
-                "\nDescription = " + getDescription();
-    }
-
 }

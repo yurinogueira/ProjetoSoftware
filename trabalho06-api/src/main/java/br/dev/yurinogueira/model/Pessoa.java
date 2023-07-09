@@ -42,11 +42,4 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
-    @Override
-    public String toString() {
-        return "\nID = " + getId() +
-                "\nNome = " + getNome() +
-                "\nCPF = " + getCpf();
-    }
-
 }

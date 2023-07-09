@@ -44,7 +44,7 @@ public class PessoaController {
     }
 
     @GetMapping("funcao/{idFuncao}")
-    public List<Pessoa> recuperarPessoasPorCategoria(@PathVariable("idFuncao") Long id) {
+    public List<Pessoa> recuperarPessoasPorFuncao(@PathVariable("idFuncao") Long id) {
         return pessoaService.recuperarPessoasPorFuncao(id);
     }
 
