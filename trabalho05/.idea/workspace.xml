@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b013e9b6-f71d-4567-bd09-a802ab01a2ca" name="Changes" comment="chore: adjust trabalho05">
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Period.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Period.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Role.java" afterDir="false" />
+    <list default="true" id="b013e9b6-f71d-4567-bd09-a802ab01a2ca" name="Changes" comment="chore: update roles">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,21 +36,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;adcbcb4bb38dbeab9ee2123f0cba7e35&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
@@ -77,7 +77,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688926815073</updated>
-      <workItem from="1688926816273" duration="2861000" />
+      <workItem from="1688926816273" duration="4039000" />
+      <workItem from="1688930859097" duration="56000" />
+      <workItem from="1688932229577" duration="273000" />
     </task>
     <task id="LOCAL-00001" summary="chore: adjust trabalho05">
       <created>1688929456628</created>
@@ -86,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688929456628</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chore: update roles">
+      <created>1688929733517</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688929733517</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: adjust trabalho05" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: adjust trabalho05" />
+    <MESSAGE value="chore: update roles" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: update roles" />
   </component>
 </project>
