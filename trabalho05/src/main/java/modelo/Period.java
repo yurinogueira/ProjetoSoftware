@@ -54,8 +54,7 @@ public class Period {
                 "\nRole Id = " + getRole().getId() +
                 "\nPerson Id = " + getPerson().getId() +
                 "\nData Inicial = " + getDateInFormatted() +
-                "\nData Final = " + getDateOutFormatted() +
-                "\nVersão = " + getVersion();
+                "\nData Final = " + getDateOutFormatted();
     }
 
 }

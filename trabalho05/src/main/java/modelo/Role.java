@@ -41,8 +41,7 @@ public class Role {
     public String toString() {
         return "\nID = " + getId() +
                 "\nNome = " + getName() +
-                "\nDescription = " + getDescription() +
-                "\nVersão = " + getVersion();
+                "\nDescription = " + getDescription();
     }
 
 }

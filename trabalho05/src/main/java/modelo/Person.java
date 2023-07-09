@@ -65,8 +65,7 @@ public class Person {
     public String toString() {
         return "\nID = " + getId() +
                 "\nNome = " + getName() +
-                "\nCPF = " + getCpfMask() +
-                "\nVersão = " + getVersion();
+                "\nCPF = " + getCpfMask();
     }
 
 }

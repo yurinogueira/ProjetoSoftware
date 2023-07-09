@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b013e9b6-f71d-4567-bd09-a802ab01a2ca" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/controle/InterceptadorDeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/controle/InterceptadorDeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trabalho05.iml" beforeDir="false" />
+    <list default="true" id="b013e9b6-f71d-4567-bd09-a802ab01a2ca" name="Changes" comment="chore: adjust trabalho05">
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Period.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Period.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Role.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +77,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688926815073</updated>
-      <workItem from="1688926816273" duration="2503000" />
+      <workItem from="1688926816273" duration="2861000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: adjust trabalho05">
+      <created>1688929456628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688929456628</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,5 +102,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: adjust trabalho05" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: adjust trabalho05" />
   </component>
 </project>
