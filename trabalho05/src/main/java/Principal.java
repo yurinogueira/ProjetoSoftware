@@ -41,7 +41,7 @@ public class Principal {
 
                     id = personAppService.inclui(umPerson);
 
-                    System.out.println("\nProduto número " + id + " incluído com sucesso!");
+                    System.out.println("\nPessoa de ID " + id + " incluída com sucesso!");
                 }
                 case 2 -> {
                     id = Console.readInt("\nDigite o id da pessoa que você deseja alterar: ");

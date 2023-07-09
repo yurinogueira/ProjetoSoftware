@@ -16,8 +16,7 @@ public class InterceptadorDeDao implements MethodInterceptor {
      *
      * objeto - "this", o objeto "enhanced", isto é, o proxy.
      *
-     * metodo - o método interceptado, isto é, um método da interface ProdutoDAO,
-     * LanceDAO, etc.
+     * metodo - o método interceptado, isto é, um método da interface PersonDao, etc.
      *
      * args - um array de args; tipos primitivos são empacotados. Contém os
      * argumentos que o método interceptado recebeu.

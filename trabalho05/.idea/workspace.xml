@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fddd236a-5ba5-4ad9-a8c5-0dacae439b75" name="Changes" comment="chore: unnecessary classes">
+    <list default="true" id="b013e9b6-f71d-4567-bd09-a802ab01a2ca" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/controle/InterceptadorDeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/controle/InterceptadorDeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trabalho05.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +32,13 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
-  <component name="ProjectId" id="2SJ1UNaxbkAWPaeEoxGLg2ULwSA" />
+  <component name="ProjectId" id="2SLXPzdHdnbU3UOv7BttsItNDr9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,21 +54,17 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.11025358",
-    "spring.configuration.checksum": "56b45eb14170593025e8235b993b7155",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
-    ]
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Principal" />
       <module name="trabalho05" />
-      <option name="VM_PARAMETERS" value="--add-opens java.base/java.lang=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--add-opens java.base/java.lang=ALL-UNNAMED " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -69,38 +78,27 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fddd236a-5ba5-4ad9-a8c5-0dacae439b75" name="Changes" comment="" />
-      <created>1688849884338</created>
+      <changelist id="b013e9b6-f71d-4567-bd09-a802ab01a2ca" name="Changes" comment="" />
+      <created>1688926815073</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1688849884338</updated>
-      <workItem from="1688849885556" duration="288000" />
-      <workItem from="1688850188859" duration="145000" />
-      <workItem from="1688850336196" duration="2059000" />
+      <updated>1688926815073</updated>
+      <workItem from="1688926816273" duration="2503000" />
     </task>
-    <task id="LOCAL-00001" summary="chore: finish trabalho 05">
-      <created>1688851751873</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1688851751873</updated>
-    </task>
-    <task id="LOCAL-00002" summary="chore: unnecessary classes">
-      <created>1688851826206</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1688851826206</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: finish trabalho 05" />
-    <MESSAGE value="chore: unnecessary classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: unnecessary classes" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
